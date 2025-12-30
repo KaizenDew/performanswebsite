@@ -1,0 +1,175 @@
+
+        /* Temel Sıfırlama ve Font Ayarları */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #1b1411; /* Koyu kahve tonu */
+            color: #f4f1ea; /* Krem rengi yazı */
+        }
+
+        /* Navigasyon Paneli */
+        header {
+            background-color: #2b1d16;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            border-bottom: 2px solid #d4a373; /* Altın/Kahve tonu şerit */
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d4a373;
+            letter-spacing: 2px;
+        }
+
+        .navbar a {
+            color: #f4f1ea;
+            margin-left: 25px;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #d4a373;
+        }
+
+        #menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #d4a373;
+        }
+
+        /* Giriş (Hero) Alanı */
+        .home {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            /* Arka plana şık bir cafe görseli */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .home-content {
+            max-width: 650px;
+        }
+
+        .home-content h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .home-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #e0e0e0;
+        }
+
+        .btn {
+            background-color: #d4a373;
+            color: #1b1411;
+            padding: 10px 25px;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #b88b5c;
+            letter-spacing: 1px;
+        }
+
+        /* Hakkımızda Alanı */
+        .about {
+            padding: 80px 8%;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .about-image {
+            flex: 1 1 400px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .about-text {
+            flex: 1 1 400px;
+        }
+
+        .about-text h2 {
+            font-size: 32px;
+            color: #d4a373;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #dcdcdc;
+            margin-bottom: 15px;
+        }
+
+        /* Bilgi Mesajı (Yarım Kaldığı Belli Olsun Diye) */
+        .status-msg {
+            text-align: center;
+            padding: 40px;
+            background-color: #2b1d16;
+            margin-top: 20px;
+            color: #888;
+            font-style: italic;
+        }
+
+        /* Mobil Ekran Ayarları */
+        @media (max-width: 768px) {
+            #menu-btn {
+                display: block;
+            }
+
+            .navbar {
+                display: none; 
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                right: 8%;
+                background: #2b1d16;
+                width: 220px;
+                padding: 15px;
+                border: 1px solid #d4a373;
+            }
+
+            .navbar.active {
+                display: flex;
+            }
+
+            .navbar a {
+                margin: 10px 0;
+                margin-left: 0;
+            }
+
+            .home-content h1 {
+                font-size: 32px;
+            }
+        }
