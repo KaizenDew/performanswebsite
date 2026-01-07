@@ -3,57 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Köşe Kafe | Ödev Taslağı</title>		
-
-
-    <!-- İkonlar için Font Awesome -->
+    <title>Köşe Kafe | Web Tasarım Ödevi</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    
+    <style>
+    </style>
 </head>
 <body>
 
-    <!-- Üst Başlık ve Menü -->
-    <header>
-        <div class="logo"><i class="fas fa-coffee"></i> KÖŞE KAFE</div>
-        
-        <nav class="navbar" id="navbar">
-            <a href="#home">Ana Sayfa</a>
-            <a href="#about">Hikayemiz</a>
-            <a href="#">Kahveler (Yakında)</a>
-            <a href="#">Tatlılar (Yakında)</a>
-        </nav>
-
-        <div id="menu-btn" class="fas fa-bars"></div>
-    </header>
-
-    <!-- Ana Sayfa Kısmı -->
-    <section class="home" id="home">
-        <div class="home-content">
-            <h1>Günün En Güzel Anı Bir Yudum Kahve</h1>
-            <p>Özenle seçilmiş çekirdekler, taze demlenmiş aromalar ve huzur dolu bir atmosfer. Kafe projemizin ilk aşaması olan bu sayfada tasarım detaylarını görebilirsiniz.</p>
-            <a href="#about" class="btn">Hikayemizi Oku</a>
-        </div>
-    </section>
-
-    <!-- Cafe Hakkında Kısmı  -->
-    <section class="about" id="about">
-        <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=800&q=80" alt="Kahve Hazırlama">
-        </div>
-        <div class="about-text">
-            <h2>Kahve Tutkumuz</h2>
-            <p>11. sınıf projesi olarak başladığım bu Cafe web sitesinde, ziyaretçilerin kendilerini evinde hissedeceği sıcak bir tasarım hedefledim.</p>
-            <p>Şu an web sitemizin görsel yapısını ve Hakkımızda kısmını tamamladım. Yakın zamanda zengin kahve menümüzü ve günlük tatlı listemizi de ekleyerek projeyi bitireceğim.</p>
-        </div>
-    </section>
-
-    <div class="status-msg">
-        <p>--- Cafe Menüsü ve İletişim Bilgileri Tasarım Aşamasındadır ---</p>
-    </div>
-
-
     <script src="script.js"></script>
 
+    <header class="ust-panel">
+        <div class="logo"><i class="fas fa-coffee"></i> KÖŞE KAFE</div>
+        <nav class="nav-menu">
+            <a href="#ana">Ana Sayfa</a>
+            <a href="#hakkimizda">Hikayemiz</a>
+            <a href="#menu">Menü</a>
+            <a href="#iletisim">İletişim</a>
+        </nav>
+    </header>
+
+    <section class="kahraman" id="ana">
+        <div>
+            <h1>Günün En Güzel Anı Bir Yudum Kahve</h1>
+            <p>Özenle seçilmiş aromalarla kendinizi şımartın.</p>
+            <a href="#menu" class="buton">Menüyü İncele</a>
+        </div>
+    </section>
+
+    <section class="hakkimizda" id="hakkimizda">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1470&auto=format&fit=crop" alt="Hakkımızda">
+        <div>
+            <h2 style="color: var(--ana-renk); font-size: 32px; margin-bottom: 15px;">Kahve Tutkumuz</h2>
+            <p>11. sınıf projesi olarak başladığımız bu yolda, en taze çekirdekleri sizin için hazırlıyoruz. Huzurlu bir mola için en doğru adrestesiniz.</p>
+        </div>
+    </section>
+
+    <section class="menu-bolumu" id="menu">
+        <h2>Lezzet Köşesi</h2>
+        <div class="kaydirici-cerceve">
+            <button class="ok-butonu sol-ok" onclick="kaydir(-1)"><i class="fas fa-chevron-left"></i></button>
+            <button class="ok-butonu sag-ok" onclick="kaydir(1)"><i class="fas fa-chevron-right"></i></button>
+            
+            <div class="kaydirici-icerik" id="menuKaydirici">
+                <div class="menu-karti">
+                    <i class="fas fa-mug-hot"></i>
+                    <h3>Filtre Kahve</h3>
+                    <p>Taze demlenmiş aromatik çekirdekler.</p>
+                    <span class="fiyat">55 ₺</span>
+                </div>
+                <div class="menu-karti">
+                    <i class="fas fa-coffee"></i>
+                    <h3>Latte</h3>
+                    <p>Bol köpüklü ve yumuşak içim.</p>
+                    <span class="fiyat">65 ₺</span>
+                </div>
+                <div class="menu-karti">
+                    <i class="fas fa-cheese"></i>
+                    <h3>San Sebastian</h3>
+                    <p>Akışkan kıvamlı efsane lezzet.</p>
+                    <span class="fiyat">90 ₺</span>
+                </div>
+                <div class="menu-karti">
+                    <i class="fas fa-cookie"></i>
+                    <h3>Mozaik Pasta</h3>
+                    <p>Anne eli değmiş gibi, bol kakaolu.</p>
+                    <span class="fiyat">70 ₺</span>
+                </div>
+                <div class="menu-karti">
+                    <i class="fas fa-bread-slice"></i>
+                    <h3>Sıcak Kruvasan</h3>
+                    <p>Tereyağlı taze çıtır katlar.</p>
+                    <span class="fiyat">85 ₺</span>
+                </div>
+                <div class="menu-karti">
+                    <i class="fas fa-hamburger"></i>
+                    <h3>Mini Sandviç</h3>
+                    <p>Özel soslu doyurucu atıştırmalık.</p>
+                    <span class="fiyat">60 ₺</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="iletisim-bolumu" id="iletisim">
+        <div class="iletisim-kapsayici">
+            <h2 style="text-align: center; margin-bottom: 30px; color: var(--ana-renk);">Bize Ulaşın</h2>
+            <form id="iletisimFormu">
+                <div class="form-satir">
+                    <label>Ad Soyad</label>
+                    <input type="text" class="form-input" placeholder="Adınız Soyadınız" required>
+                </div>
+                <div class="form-satir">
+                    <label>Mesajınız</label>
+                    <textarea class="form-input" rows="4" placeholder="Düşüncelerinizi paylaşın..." required></textarea>
+                </div>
+                <div class="form-satir">
+                    <label>Doğrulama</label>
+                    <div class="guvenlik-kutusu">
+                        <span id="soru-metni" style="font-size: 20px; font-weight: bold;"></span>
+                        <button type="button" class="yenile-btn" onclick="yeniSoru()" title="Soruyu Yenile">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                        <input type="number" id="cevap-kutusu" class="form-input" style="width: 100px;" placeholder="?" required>
+                    </div>
+                </div>
+                <button type="submit" class="gonder-butonu">Mesajı Gönder</button>
+                <p id="mesaj-durumu" style="text-align: center; margin-top: 15px;"></p>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Köşe Kafe | 11. Sınıf Web Tasarım Ödevi</p>
+    </footer>
+
+    
 </body>
 </html>

@@ -1,13 +1,33 @@
+    function kaydir(yon) {
+        const icerik = document.getElementById('menuKaydirici');
+        const kartGenisligi = icerik.querySelector('.menu-karti').offsetWidth + 25; 
+        icerik.scrollLeft += (yon * kartGenisligi);
+    }
 
-// Mobil menü butonu fonksiyonu
-let menuBtn = document.querySelector('#menu-btn');
-let navbar = document.querySelector('.navbar');
+    let s1, s2, dogruCevap;
 
-menuBtn.onclick = () => {
-    navbar.classList.toggle('active');
-};
+    function yeniSoru() {
+        s1 = Math.floor(Math.random() * 10) + 1;
+        s2 = Math.floor(Math.random() * 10) + 1;
+        dogruCevap = s1 + s2;
+        document.getElementById('soru-metni').innerText = s1 + " + " + s2 + " =";
+        document.getElementById('cevap-kutusu').value = '';
+    }
 
- //açık kalan mobil menüyü kapatır
-window.onscroll = () => {
-    navbar.classList.remove('active');
-};
+    window.onload = yeniSoru;
+
+    document.getElementById('iletisimFormu').onsubmit = function(e) {
+        e.preventDefault();
+        let girilen = document.getElementById('cevap-kutusu').value;
+        let durum = document.getElementById('mesaj-durumu');
+
+        if(parseInt(girilen) === dogruCevap) {
+            durum.innerText = "Mesajınız başarıyla iletildi!";
+            durum.style.color = "#4caf50";
+            this.reset();
+            yeniSoru();
+        } else {
+            durum.innerText = "Doğrulama hatalı!";
+            durum.style.color = "#f44336";
+        }
+    };

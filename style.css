@@ -1,21 +1,28 @@
 
-        /* Temel Sıfırlama ve Font Ayarları */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-decoration: none;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --ana-renk: #d4a373;
+            --koyu-renk: #1b1411;
+            --kutu-arka-plan: #2b1d16;
+            --yazi-rengi: #f4f1ea;
         }
 
         body {
-            background-color: #1b1411; /* Koyu kahve tonu */
-            color: #f4f1ea; /* Krem rengi yazı */
+            background-color: var(--koyu-renk);
+            color: var(--yazi-rengi);
+            overflow-x: hidden;
         }
 
-        /* Navigasyon Paneli */
-        header {
-            background-color: #2b1d16;
+        .ust-panel {
+            background-color: var(--kutu-arka-plan);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -23,153 +30,263 @@
             position: fixed;
             top: 0;
             width: 100%;
-            z-index: 100;
-            border-bottom: 2px solid #d4a373; /* Altın/Kahve tonu şerit */
+            z-index: 1000;
+            border-bottom: 2px solid var(--ana-renk);
         }
 
         .logo {
             font-size: 24px;
             font-weight: bold;
-            color: #d4a373;
-            letter-spacing: 2px;
+            color: var(--ana-renk);
         }
 
-        .navbar a {
-            color: #f4f1ea;
+        .nav-menu a {
+            color: var(--yazi-rengi);
             margin-left: 25px;
-            font-size: 17px;
             transition: 0.3s;
         }
 
-        .navbar a:hover {
-            color: #d4a373;
+        .nav-menu a:hover {
+            color: var(--ana-renk);
         }
 
-        #menu-btn {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: #d4a373;
-        }
-
-        /* Giriş (Hero) Alanı */
-        .home {
+        .kahraman {
             height: 100vh;
             display: flex;
             align-items: center;
             padding: 0 8%;
-            /* Arka plana şık bir cafe görseli */
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1350&q=80');
+                        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1470&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
         }
 
-        .home-content {
-            max-width: 650px;
+        .kahraman h1 {
+            font-size: 45px;
+            max-width: 600px;
         }
 
-        .home-content h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
-            color: #fff;
-        }
-
-        .home-content p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            color: #e0e0e0;
-        }
-
-        .btn {
-            background-color: #d4a373;
-            color: #1b1411;
-            padding: 10px 25px;
-            border-radius: 4px;
+        .buton {
+            background-color: var(--ana-renk);
+            color: #110d0b;
+            padding: 12px 30px;
+            border-radius: 5px;
             font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
             transition: 0.3s;
         }
 
-        .btn:hover {
+        .buton:hover {
+            transform: scale(1.05);
             background-color: #b88b5c;
-            letter-spacing: 1px;
         }
 
-        /* Hakkımızda Alanı */
-        .about {
-            padding: 80px 8%;
+        .hakkimizda {
+            padding: 100px 8%;
             display: flex;
             align-items: center;
             gap: 40px;
-            flex-wrap: wrap;
         }
 
-        .about-image {
-            flex: 1 1 400px;
+        .hakkimizda img {
+            width: 45%;
+            border-radius: 15px;
         }
 
-        .about-image img {
-            width: 100%;
-            border-radius: 8px;
+        .menu-bolumu {
+            padding: 80px 8%;
+            background-color: var(--kutu-arka-plan);
+            text-align: center;
+        }
+
+        .menu-bolumu h2 {
+            font-size: 32px;
+            color: var(--ana-renk);
+            margin-bottom: 40px;
+        }
+
+        .kaydirici-cerceve {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .kaydirici-icerik {
+            display: flex;
+            gap: 25px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 30px 0;
+            scrollbar-width: none;
+        }
+
+        .kaydirici-icerik::-webkit-scrollbar {
+            display: none;
+        }
+
+        .menu-karti {
+            min-width: calc(33.333% - 20px); 
+            background: var(--koyu-renk);
+            padding: 40px 25px;
+            border-radius: 15px;
+            border: 1px solid #3d2b1f;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-karti:hover {
+            border-color: var(--ana-renk);
+            transform: translateY(-10px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
-        .about-text {
-            flex: 1 1 400px;
-        }
-
-        .about-text h2 {
-            font-size: 32px;
-            color: #d4a373;
+        .menu-karti i {
+            font-size: 50px;
+            color: var(--ana-renk);
             margin-bottom: 20px;
         }
 
-        .about-text p {
-            font-size: 16px;
-            line-height: 1.7;
-            color: #dcdcdc;
-            margin-bottom: 15px;
+        .menu-karti h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
         }
 
-        /* Bilgi Mesajı (Yarım Kaldığı Belli Olsun Diye) */
-        .status-msg {
-            text-align: center;
+        .fiyat {
+            display: block;
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--ana-renk);
+            background: rgba(212, 163, 115, 0.1);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        .ok-butonu {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--ana-renk);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 5;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            transition: 0.3s;
+        }
+
+        .ok-butonu:hover {
+            background: #fff;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .sol-ok { left: -25px; }
+        .sag-ok { right: -25px; }
+
+        .iletisim-bolumu {
+            padding: 100px 8%;
+            background-color: var(--koyu-renk);
+        }
+
+        .iletisim-kapsayici {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--kutu-arka-plan);
             padding: 40px;
-            background-color: #2b1d16;
-            margin-top: 20px;
-            color: #888;
-            font-style: italic;
+            border-radius: 15px;
+            border: 1px solid #3d2b1f;
         }
 
-        /* Mobil Ekran Ayarları */
-        @media (max-width: 768px) {
-            #menu-btn {
-                display: block;
-            }
+        .form-satir {
+            margin-bottom: 20px;
+            text-align: left;
+        }
 
-            .navbar {
-                display: none; 
-                flex-direction: column;
-                position: absolute;
-                top: 70px;
-                right: 8%;
-                background: #2b1d16;
-                width: 220px;
-                padding: 15px;
-                border: 1px solid #d4a373;
-            }
+        .form-satir label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--ana-renk);
+            font-weight: bold;
+        }
 
-            .navbar.active {
-                display: flex;
-            }
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            background: var(--koyu-renk);
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 8px;
+            outline: none;
+        }
 
-            .navbar a {
-                margin: 10px 0;
-                margin-left: 0;
-            }
+        .guvenlik-kutusu {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 8px;
+        }
 
-            .home-content h1 {
-                font-size: 32px;
-            }
+        .yenile-btn {
+            background: none;
+            border: none;
+            color: var(--ana-renk);
+            cursor: pointer;
+            font-size: 18px;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s ease; 
+        }
+
+        .yenile-btn:hover {
+            color: #fff; 
+        }
+
+        .yenile-btn:active {
+            opacity: 0.6; 
+        }
+
+        .gonder-butonu {
+            width: 100%;
+            padding: 15px;
+            background: var(--ana-renk);
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            color: #110d0b;
+        }
+
+        .gonder-butonu:hover {
+            background: #f5c79a;
+        }
+
+        footer {
+            padding: 40px;
+            text-align: center;
+            background: #110d0b;
+            border-top: 2px solid var(--ana-renk);
+        }
+
+        @media (max-width: 992px) {
+            .menu-karti { min-width: calc(50% - 20px); }
+        }
+
+        @media (max-width: 600px) {
+            .menu-karti { min-width: 85%; }
+            .hakkimizda { flex-direction: column; }
+            .hakkimizda img { width: 100%; }
+            .nav-menu { display: none; }
         }
